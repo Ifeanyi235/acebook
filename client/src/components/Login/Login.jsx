@@ -10,7 +10,7 @@ function Login () {
     useEffect(() => {
         async function handleAuthorization() {
           try {
-            const response = await axios.get('http://localhost:5000/authorize', {
+            const response = await axios.get('https://acebook-ct46.onrender.com/authorize', {
               withCredentials: true
             });
             const message = response.data.message;
