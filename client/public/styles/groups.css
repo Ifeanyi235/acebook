@@ -1,0 +1,9 @@
+#group {
+    height: 100vh;
+
+    #nav-bar {
+        .group {
+            border-bottom: var(--iconBlue) 3px solid;
+        }
+    }
+}

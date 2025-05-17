@@ -1,0 +1,163 @@
+#login {
+    justify-content: space-around;
+    gap: 0rem;
+    height: 60%;
+    width: 100%;
+    align-self: center;
+}
+
+#login > section {
+    align-self: center;
+    gap: 1rem;
+    #logo {
+        padding: 0;
+        margin: 0;
+        align-self: flex-start;
+        height: 4rem;
+        object-fit: contain;
+    }
+}
+
+#login > form {
+    grid-template: 1fr 1fr / 1fr;
+    gap: 0.5rem;
+    width: 30%;
+    height: 100%;
+    padding: 2rem;
+    box-sizing: border-box;
+}
+
+#login > form > div {
+    grid-template: auto / 1fr;
+    gap: 1rem;
+    input, button {
+        border: 1px var(--border) solid;
+        border-radius: 0.5rem;
+        box-sizing: border-box;
+        padding: 10px 20px;
+        width: 100%;
+    }
+    input {
+        outline: none;
+        background: #E8F0FE;
+        transition: border-color 0.3s ease-in-out;
+    }
+    input:focus {
+        border-color: var(--primary-blue);
+    }
+    button {
+        background: var(--font-blue);
+        color: var(--secondary-background);
+        transition: background 0.25s ease-in-out;
+    }
+}
+
+#login > form > div:nth-of-type(2) > a:nth-of-type(1) {
+    border-bottom: 1px var(--border) solid;
+    width: 100%;
+    color: var(--primary-blue);
+}
+
+#login > form > div:nth-of-type(2) {
+    gap: 0;
+    a {   
+        height: 100%;
+        text-align: center;
+        justify-self: center;
+        align-content: center;
+        text-decoration: none;
+        transition: color 0.3s ease-in-out;
+    }
+
+    a:nth-of-type(2) {
+        background: var(--green);
+        height: fit-content;
+        align-self: flex-end;
+        padding: 1rem;
+        color: var(--secondary-background);
+        transition: background 0.25s ease-in-out;
+    }
+    
+}
+
+#login > form > div button:hover {
+    background: var(--primary-blue);
+}
+
+#login > form > div:nth-of-type(2) > a:nth-of-type(1):hover {
+    text-decoration: underline;
+    color: var(--font-blue);
+}
+
+#login > form > div:nth-of-type(2) > a:nth-of-type(2):hover {
+    background: var(--hover-green);
+}
+
+#login > form > div > input:hover {
+    border-color: var(--primary-blue);
+}
+
+@media (max-width: 930px){
+    #login {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 2rem;
+
+        >section #logo {
+            align-self: center;
+        }
+
+        > form {
+            width: 50%;
+        }
+    }
+}
+
+/* @media (max-width: 930px){
+    #login {
+        >section {
+            align-items: center;
+            #logo {
+                height: 2.5rem;
+            }
+        } 
+
+        > form {
+            width: 50%;
+        }
+
+        p {
+            width: 75%;
+            text-align: center;
+        }
+    }
+} */
+
+@media (max-width: 540px) {
+    #login {
+        height: 60%;
+        > section {
+            width: 80%;
+            text-align: center;
+        }
+
+        > form {
+            width: 85%;
+            font-size: 0.9rem;
+            padding: 1rem;
+        }
+    }
+}
+
+@media (max-width: 400px) {
+    #login {
+        > section {
+            width: 80%;
+            text-align: center;
+            #logo {
+                height: 2rem;
+            }
+        }
+    }
+}

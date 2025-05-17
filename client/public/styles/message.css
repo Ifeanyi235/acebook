@@ -1,0 +1,16 @@
+#message {
+    height: 100vh;
+    overflow: hidden;
+    #nav-bar {
+        .message {
+            border-bottom: var(--iconBlue) 3px solid;
+        }
+    }
+}
+
+#message-hd {
+    svg:hover {
+        transform: scale(1.2);
+    }
+}
+
