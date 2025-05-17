@@ -9,14 +9,14 @@ import bodyParser from "body-parser";
 import env from "dotenv";
 
 const app = express();
-const port = 5000;
+const port = process.env.PORT || 5000;
 const saltRounds = 10;
 let currentID = undefined;
 let db = undefined;
 env.config();
 
 app.use(cors({
-    origin: 'http://localhost:3000',
+    origin: 'https://acebook-a0vi.onrender.com',
     credentials: true
 }));
 

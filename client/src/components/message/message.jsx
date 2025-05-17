@@ -31,7 +31,7 @@ function Message () {
     useEffect(() => {
         async function handleAuthorization() {
           try {
-            const response = await axios.get('https://acebook-ct46.onrender.com/authorize', {
+            const response = await axios.get('https://acebookserver.onrender.com/authorize', {
               withCredentials: true
             });
             const message = response.data.message;
