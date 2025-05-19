@@ -15,10 +15,22 @@ let currentID = undefined;
 let db = undefined;
 env.config();
 
-app.use(cors({
-    origin: 'https://acebook-theta.vercel.app',
-    credentials: true
+// app.use(cors({
+//     origin: 'https://acebook-theta.vercel.app',
+//     credentials: true
+// }));
+
+app.options('*', cors({
+  origin: 'https://acebook-theta.vercel.app',
+  credentials: true
 }));
+
+app.use((req, res, next) => {
+  res.header("Access-Control-Allow-Origin", "https://acebook-theta.vercel.app");
+  res.header("Access-Control-Allow-Credentials", "true");
+  next();
+});
+
 
 app.use(
   session({
