@@ -20,7 +20,7 @@ function Dropdown (props) {
 
     async function handleclickLogout () {
       try {
-          const response = await axios.get('https://acebookserver.onrender.com/logout', {
+          const response = await axios.get('http://localhost:5000/logout', {
           withCredentials: true
           });
           const message = response.data.message;

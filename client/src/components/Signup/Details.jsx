@@ -44,7 +44,7 @@ function Details () {
 
 
         try {
-            const response =  await axios.post('https://acebookserver.onrender.com/api/submit-form', formData, { withCredentials: true });
+            const response =  await axios.post('http://localhost:5000/api/submit-form', formData, { withCredentials: true });
             const message = response.data.message;
             console.log('Form submitted successfully:', message);
             message === "Success" && navigate('/home');

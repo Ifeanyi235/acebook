@@ -16,7 +16,7 @@ let db = undefined;
 env.config();
 
 app.use(cors({
-    origin: 'https://acebook-a0vi.onrender.com',
+    origin: 'http://localhost:3000',
     credentials: true
 }));
 
