@@ -16,7 +16,7 @@ let db = undefined;
 env.config();
 
 app.use(cors({
-    origin: 'http://localhost:3000',
+    origin: 'https://acebook-theta.vercel.app',
     credentials: true
 }));
 
