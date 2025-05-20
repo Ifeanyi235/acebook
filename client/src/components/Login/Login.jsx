@@ -11,7 +11,7 @@ function Login () {
         async function handleAuthorization() {
           try {
             const response = await axios.get('https://acebookserver.onrender.com/authorize', {
-              withCredentials: true
+              credentials: 'include'
             });
             const message = response.data.message;
             console.log("Authorize check:", message);
