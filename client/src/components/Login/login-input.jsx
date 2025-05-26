@@ -51,11 +51,24 @@ function LoginInput (props) {
     //     }
     // }
 
-    function handleClick (event) {
+    async function handleClick (event) {
         event.preventDefault();
 
+        const formData = {
+            "email": username.current.value,
+            "password": password.current.value,
+        }
+
         if (!(windowWidth < 680 && props.link === "/login")) {
-                 navigate('/home');            
+            try {
+                const response =  await axios.post('https://acebookserver.onrender.com/testing', formData, { withCredentials: true });
+                const message = response.data.message;
+                const data = response.data;
+                console.log('Form submitted successfully:', message);
+                message === "Success" && navigate('/home');            
+            } catch (error) {
+                console.error('Error submitting form:', error);
+            };
         } else {
             navigate('/login')
         }

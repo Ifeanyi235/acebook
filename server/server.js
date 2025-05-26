@@ -143,6 +143,14 @@ app.post('/api/submit-form', async (req, res) => {
     });
 });
 
+app.post ("/testing", (req, res) => {
+
+  const user = req.body;
+  req.logIn (user, (err) => {
+      res.json({message: "Success"})
+  });
+});
+
 app.post('/api/login-form', (req, res, next) => {
     passport.authenticate('local', (err, user, info) => {
         if (err) return next(err);
