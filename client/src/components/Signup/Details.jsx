@@ -27,34 +27,38 @@ function Details () {
         return setemailUsed(false);
     }
 
-    async function handleSubmit (event) {
-        event.preventDefault();
-        const selectedGender = genderRef.current.find((radio) => radio.checked)?.value;
+    // async function handleSubmit (event) {
+    //     event.preventDefault();
+    //     const selectedGender = genderRef.current.find((radio) => radio.checked)?.value;
 
-        const formData = {
-            "fname": fnameRef.current.value,
-            "sname": snameRef.current.value,
-            "day": dateRef.current.value,
-            "month": monthRef.current.value,
-            "year": yearRef.current.value,
-            "gender": selectedGender === "Custom" ? othersRef.current.value : selectedGender,
-            "email": emailRef.current.value,
-            "password": passwordRef.current.value
-        };
+    //     const formData = {
+    //         "fname": fnameRef.current.value,
+    //         "sname": snameRef.current.value,
+    //         "day": dateRef.current.value,
+    //         "month": monthRef.current.value,
+    //         "year": yearRef.current.value,
+    //         "gender": selectedGender === "Custom" ? othersRef.current.value : selectedGender,
+    //         "email": emailRef.current.value,
+    //         "password": passwordRef.current.value
+    //     };
 
 
-        try {
-            const response =  await axios.post('https://acebookserver.onrender.com/api/submit-form', formData, { withCredentials: true });
-            const message = response.data.message;
-            console.log('Form submitted successfully:', message);
-            message === "Success" && navigate('/home');
-            message === "Account already exists" && setemailUsed(true);
+    //     try {
+    //         const response =  await axios.post('https://acebookserver.onrender.com/api/submit-form', formData, { withCredentials: true });
+    //         const message = response.data.message;
+    //         console.log('Form submitted successfully:', message);
+    //         message === "Success" && navigate('/home');
+    //         message === "Account already exists" && setemailUsed(true);
             
-        } catch (error) {
-            console.error('Error submitting form:', error.data.message);
-        };
+    //     } catch (error) {
+    //         console.error('Error submitting form:', error.data.message);
+    //     };
 
-    };
+    // };
+
+    function handleSubmit (event) {
+        navigate('/home');
+    }
 
     
 

@@ -25,27 +25,37 @@ function LoginInput (props) {
         };
     }, []);
 
-    async function handleClick (event) {
+    // async function handleClick (event) {
+    //     event.preventDefault();
+
+    //     const formData = {
+    //         "email": username.current.value,
+    //         "password": password.current.value,
+    //     }
+
+    //     if (!(windowWidth < 680 && props.link === "/login")) {
+    //         try {
+    //             const response =  await axios.post('https://acebookserver.onrender.com/api/login-form', formData, { withCredentials: true });
+    //             const message = response.data.message;
+    //             const data = response.data;
+    //             console.log('Form submitted successfully:', message);
+    //             message === "Success" && navigate('/home');
+    //             message === "Incorrect Password" && setIncorrect(true);
+    //             message === "Not User" && setemailUsed(false);
+            
+    //         } catch (error) {
+    //             console.error('Error submitting form:', error);
+    //         };
+    //     } else {
+    //         navigate('/login')
+    //     }
+    // }
+
+    function handleClick (event) {
         event.preventDefault();
 
-        const formData = {
-            "email": username.current.value,
-            "password": password.current.value,
-        }
-
         if (!(windowWidth < 680 && props.link === "/login")) {
-            try {
-                const response =  await axios.post('https://acebookserver.onrender.com/api/login-form', formData, { withCredentials: true });
-                const message = response.data.message;
-                const data = response.data;
-                console.log('Form submitted successfully:', message);
-                message === "Success" && navigate('/home');
-                message === "Incorrect Password" && setIncorrect(true);
-                message === "Not User" && setemailUsed(false);
-            
-            } catch (error) {
-                console.error('Error submitting form:', error);
-            };
+                 navigate('/home');            
         } else {
             navigate('/login')
         }

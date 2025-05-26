@@ -25,24 +25,24 @@ function Home () {
         };
     }, []);
  
-    useEffect(() => {
-        async function handleAuthorization() {
-          try {
-            const response = await axios.get('https://acebookserver.onrender.com/authorize', {
-              withCredentials: true
-            });
-            const message = response.data.message;
-            console.log("Authorize check:", message);
-            if (message !== "Success") {
-              navigate("/login");
-            }
-          } catch (err) {
-            console.error("Authorization error:", err);
-          }
-        }
+    // useEffect(() => {
+    //     async function handleAuthorization() {
+    //       try {
+    //         const response = await axios.get('https://acebookserver.onrender.com/authorize', {
+    //           withCredentials: true
+    //         });
+    //         const message = response.data.message;
+    //         console.log("Authorize check:", message);
+    //         if (message !== "Success") {
+    //           navigate("/login");
+    //         }
+    //       } catch (err) {
+    //         console.error("Authorization error:", err);
+    //       }
+    //     }
     
-        handleAuthorization(); // Call only when component mounts
-    }, []);
+    //     handleAuthorization(); // Call only when component mounts
+    // }, []);
 
     function handleDrop (dp) {
         return setDrop(dp === (false || true) ? dp : !drop)

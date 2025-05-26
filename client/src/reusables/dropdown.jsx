@@ -18,19 +18,23 @@ function Dropdown (props) {
     const navigate = useNavigate();
     const dispatch = useDispatch();
 
+    // async function handleclickLogout () {
+    //   try {
+    //       const response = await axios.get('https://acebookserver.onrender.com/logout', {
+    //       withCredentials: true
+    //       });
+    //       const message = response.data.message;
+    //       console.log("Authorize check:", response.data.message);
+    //       if (message === "Logout") {
+    //           navigate("/login");
+    //       }
+    //   } catch (err) {
+    //       console.error("Authorization error:", err);
+    //   }
+    // };
+
     async function handleclickLogout () {
-      try {
-          const response = await axios.get('https://acebookserver.onrender.com/logout', {
-          withCredentials: true
-          });
-          const message = response.data.message;
-          console.log("Authorize check:", response.data.message);
-          if (message === "Logout") {
-              navigate("/login");
-          }
-      } catch (err) {
-          console.error("Authorization error:", err);
-      }
+      navigate("/login");
     };
 
     function handleClick (action, text) {
